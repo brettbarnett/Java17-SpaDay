@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:border="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
     <title>Spa Menu</title>
@@ -8,8 +8,24 @@
 <body>
 <h1>My Super Fancy Spa</h1>
 <div id = "clientProfile">
+    <h2>My profile</h2>
+    <p th:text="${name}"></p>
+    <p th:text="${skintype}"></p>
+    <p th:text="${manipedi}"></p>
 </div>
 <div id = "servicesMenu">
+    <table style="border: 1px solid black">
+        <thead>
+            <tr>
+                <th:block th:each="facial : ${facials}">
+                    <th th:text="${facial}"></th>
+                </th:block>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
